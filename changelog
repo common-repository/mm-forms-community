@@ -1,0 +1,103 @@
+*******
+Version 1.8.9
+
+- now you can use [loggedin_user_email] and [loggedin_user_name] in the email message.
+
+Version 1.9.0
+
+- Fixed show submissions in the frontend.  HTML is not stripped anymore.
+
+Version 1.9.1
+
+- List submissions : you can now select what fields to show in the overview
+
+Version 1.9.2
+
+- Delete form will now delete all data as well
+
+Version 1.9.3
+
+- Delete form submissions multi select possible as from now
+
+Version 1.9.4
+
+- You can now use the condition [user_ID] = %%loggedin_user%% to show only the submissions of the logged in user in the frontend.
+
+Version 1.9.5
+
+- mail attachments is working now
+
+	UPDATE database : 
+		ALTER TABLE `wp_contactform` CHANGE `mail-attachment` `mail_attachment` TINYINT( 2 ) NOT NULL DEFAULT '0';
+		ALTER TABLE `wp_contactform` CHANGE `mail2-attachment` `mail2_attachment` TINYINT( 2 ) NOT NULL DEFAULT '0';
+		
+Version 1.9.6
+
+- Added installation error messages whenever a required directory does not exists
+		
+Version 1.9.7
+
+- Advanced settings : 
+	- add post or page author as hidden fields in form
+	- add post custom fields as hidden fields in form
+	- add logged in user name and email as hidden fields in the form
+
+Version 1.9.8
+
+- This version does not add new features, we just cleaned out the plugin, removed some unused files and moved other files in the appropriate directory.
+
+Version 1.9.9
+
+- This version does not add new features.  
+	UPDATE database :
+		ALTER TABLE `wp_contactform_submit_data` ADD INDEX `form_key` ( `form_key` ) ;
+		
+		ALTER TABLE `wp_contactform` CHANGE `formheader` `formheader` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+		CHANGE `formconditions` `formconditions` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+		CHANGE `formloopdata` `formloopdata` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+		CHANGE `formfooter` `formfooter` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+Version 2.0.0
+
+- Shortcode added to display the total number of submissions
+	Use : [mmf_total_submissions form_id="1"] in a post or page to display the total submissions
+
+Version 2.1.0
+
+- Added support for Wordpress 3.  Thanks to Bram Esposito for his excellent knowledge of Javascript and JSON.
+
+Version 2.2.0 
+
+- Added support for WordPress 3.2.x
+
+Version 2.2.1
+
+- Image uploader fixed for IE 8 and IE 9
+
+Version 2.2.2
+
+- Added jquery updated files.  Note that these files should be placed in your WordPress wp-includes/js/jquery folder
+
+Version 2.2.3
+
+- Bugfix : direct file access to ajaxfileupload forbidden : http://packetstormsecurity.org/files/view/104009/wpmmforms-shell.txt
+
+Version 2.2.4
+
+- Bugfix: Changed paths to use wordpress URL& path variables.
+- Performance: Changed export to CSV to reduce load on database server.
+
+Version 2.2.5
+
+- Bugfix: Changed paths to use wordpress URL & path variables.
+
+Version 2.2.6
+
+- Bugfix: Fixed file uploads. Still looks strange for non-images.
+- Cleanup: Removed the jQuery updates as they are no longer required.
+- Other: Added empty directories for exports and uploads
+- Other: Changed named to MM Forms Community
+
+Version 2.2.7
+
+- Security: Fixed a major security flaw
